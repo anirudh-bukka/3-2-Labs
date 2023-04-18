@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<HTML>
+
+
+<SCRIPT>
+	function validateform(){
+
+		// Username and password validation  
+		var name=document.loginform.username.value;  
+		var password=document.loginform.password.value;  
+		if (name == null || name==""){  
+			alert("Name can't be blank");  
+			return false;  
+		} else if(password.length<6){  
+			alert("Password must be at least 6 characters long.");  
+			return false;  
+		}  
+	}
+
+</SCRIPT>
+
+<STYLE>
+	body {
+		// border: solid 1px black;
+		width: 50%;
+		align-items: center;
+		margin: auto;
+		padding: 20px;
+	}
+
+	label {
+		// padding: 50px 50px;
+	}
+	
+	input {
+		margin: 10px 10px;
+	}
+</STYLE>
+
+<HEAD></HEAD>
+
+<BODY>
+	<form name="loginform" onsubmit="return validateform()">  
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username" required> <br /> 
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" required>  <br />
+            <button type="submit">Login</button>   <br />  
+	</form> 
+</BODY>
+
+</HTML>

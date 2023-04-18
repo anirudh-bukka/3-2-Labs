@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<HTML>
+<script>  
+	function validateform(){
+
+		// Username and password validation  
+		var name=document.registrationForm.username.value;  
+		var password=document.registrationForm.password.value;  
+		if (name == null || name==""){  
+			alert("Name can't be blank");  
+			return false;  
+		} 
+		if(/^[A-Za-z]+$/.test(name)) {	 
+			return true;
+		} else {
+			alert("Name should have only characters.");  
+			return false;
+		}
+		if(password.length<6){  
+			alert("Password must be at least 6 characters long.");  
+			return false;  
+		}  
+
+
+		// email validation
+		var x=document.registrationForm.email.value;  
+		var atposition=x.indexOf("@");  
+		var dotposition=x.lastIndexOf(".");  
+		
+		if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length) {  
+			alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+			return false;  
+		}
+
+
+		// Limit for phone number
+		var phno = document.registrationForm.phoneno.value;
+		var len = phno.length;
+		if(len != 10) {
+			alert("Enter valid phone number (10 digits).");
+			return false;
+		} else {
+			if(!(/^\d+$/.test(phno))) {
+				alert("Mobile number must contain only numbers");
+				return false;
+			} 
+		}
+	}
+	
+</script>  
+
+<STYLE>
+	body {
+		// border: solid 1px black;
+		width: 50%;
+		align-items: center;
+		margin: auto;
+		padding: 20px;
+	}
+
+	label {
+		// padding: 50px 50px;
+	}
+	
+	input {
+		margin: 10px 10px;
+	}
+
+		
+</STYLE>
+
+<HEAD></HEAD>
+
+<BODY>
+
+	<form name="registrationForm" method="post" action="" onsubmit="return validateform()"> 	
+		<label>Name: </label>	
+		<input type="text" placeholder="Enter Username" name="username"> <br /> 	
+		<label>Password: </label>   	
+		<input type="password" placeholder="Enter Password" name="password">  <br />	
+		<label>Email: </label>   	
+            	<input type="text" placeholder="Enter Email ID" name="email"> <br />	
+		<label>Phone no.: </label>   	
+            	<input type="text" placeholder="Enter Phone No." name="phoneno"> <br />  <br /> 
+
+		Gender: <br />	
+		<input type="radio" id="male" name="gender" value="male">	
+		<label for="male">Male</label><br>	
+		<input type="radio" id="female" name="gender" value="female">	
+		<label for="female">Female</label><br>	
+		<input type="radio" id="other" name="gender" value="other">	
+		<label for="other">Other</label> <br />  <br />	
+
+		Languages: <br />	
+		<input type="checkbox" id="english" name="language" value="english">	
+		<label for="english">English</label><br>	
+		<input type="checkbox" id="telugu" name="language" value="telugu">	
+		<label for="telugu">Telugu</label><br>	
+		<input type="checkbox" id="hindi" name="language" value="hindi">	
+		<label for="hindi">Hindi</label> <br />  <br />	
+
+		<label for="birthday">Birthday:</label>	
+		<input type="date" id="birthday" name="birthday"><br />	
+
+		<br /> <button type="submit">Register</button>   <br />  
+	</form>  
+</BODY>
+
+</HTML>

@@ -1,0 +1,11 @@
+//  If I want Layer1 to be above Layer2
+
+.layer1 {
+	color: red;
+	z-index: 1;
+}
+
+.layer2 {
+	color: black;
+	z-index: -1;
+}
