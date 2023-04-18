@@ -26,4 +26,12 @@
   <description>
      Tomcat Documentation.
   </description>
+<servlet>
+<servlet-name>myservlet</servlet-name>
+<servlet-class>cookie</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>myservlet</servlet-name>
+<url-pattern>/authenticate</url-pattern>
+</servlet-mapping>
 </web-app>

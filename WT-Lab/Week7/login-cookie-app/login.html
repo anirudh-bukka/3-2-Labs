@@ -15,45 +15,13 @@
 			margin-right:30%;
 		}
 	</style>
+	<title>Login Page</title>
 </head>
-
 <body>
-<form name="loginForm" align="left" action="login.html" method="post" onsubmit="return loginValid()">
-	<fieldset>
-		<div id="txt">
-			<label for="usr">Login :</label> 
-			<input type="text" id="usr" name="usr">
-			<br>
-			<label for="pass">Password:</label>
-			<input type="password" id="pass" name="pass">
-			<br>
-			<input type="submit" id="submit">
-			<input type="reset" id="reset" value="Reset"></button>
-		</div>
-		<script type="text/javascript">
-			function loginValid() {
-				//name
-				var txt = document.loginForm.usr.value;
-				var len = txt.length;
-				if(len<6) {
-					alert("Name must contain atleast 6 alphabets");
-					return false;
-				} else {
-					if(!(/^[a-zA-Z]+$/.test(txt))) {
-						alert("Name must contain only alphabets");
-						return false; 
-					}
-				}
-		
-				//pass
-				var len = document.loginForm.pass.value.length;
-				if(len<6) {
-					alert("Password must contain atleast 6 alphabets");
-					return false;
-				}
-			}
-		</script>
-	</fieldset>
-</form>
+	<form method="post" action="authenticate">
+		UserName:<input type="text" name="uname"/></br>
+		Password:<input type="password" name="pwd"/></br>
+		<input type="submit" value="submit"/></br>
+	</form>
 </body>
 </html>
