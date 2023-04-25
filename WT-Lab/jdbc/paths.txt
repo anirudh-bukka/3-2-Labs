@@ -1,0 +1,4 @@
+>>> set path=C:\Program Files\Java\jdk1.8.0_181\bin; 
+
+>>> set CLASSPATH=C:\Program Files\Java\jre1.8.0_181\lib;C:\Program Files\Apache Software Foundation\Tomcat 8.0\lib\servlet-api.jar;D:\20071A1263\WT-Lab\jdbc\ojdbc5.jar;.;
+
